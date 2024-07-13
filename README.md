@@ -255,6 +255,7 @@ GET /api/v1/message/getallmessages
 . Cloudinary integration for image uploads.
 
 . Separate roles for Patients, Doctors, and Admins.
+
 . Comprehensive error handling.
 
 
