@@ -26,14 +26,23 @@ This is the backend service for the Hospital Management System, built with Node.
 3. Set up environment variables. Create a .env file in the root directory and add the following variables:
 
 PORT=5000
+
 FRONTEND_URL=http://localhost:3000
+
 DASHBOARD_URL=http://localhost:3001
+
 MONGODB_URI=mongodb://localhost:27017/employeeDB
+
 JWT_SECRET_KEY=your_jwt_secret_key
+
 JWT_EXPIRES=7d
+
 COOKIE_EXPIRES=7
+
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+
 CLOUDINARY_API_KEY=your_cloudinary_api_key
+
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
 
