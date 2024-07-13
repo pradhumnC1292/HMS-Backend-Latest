@@ -54,7 +54,10 @@ CLOUDINARY_API_SECRET=your_cloudinary_api_secret
  ## User Management
 ### Register a Patient
 `POST /api/v1/user/patient/register`
+
 Request body:
+
+```json
 {
   "firstName": "John",
   "lastName": "Doe",
