@@ -2,6 +2,23 @@
 
 This is the backend service for the Hospital Management System, built with Node.js, Express, and MongoDB. It provides RESTful APIs for managing patients, doctors, appointments, and messages.
 
+## Hosted Link 
+
+## frontend for patients : https://hms-patients-screen-frontend.netlify.app
+
+## dashboard for administrators and staff : https://admin-dashboard-hms-frontend.netlify.app
+
+
+## First-Time Login Instructions
+Please use the following credentials for your initial login as an Administrator. Only an existing Administrator can register new Admin users. Therefore, you cannot self-register as an Administrator initially.
+```json
+{
+    "email": "peter@example.com",
+     "password": "peter123",
+     "confirmPassword": "peter123",
+}
+```
+
 ## Table of Contents
 
 - [Installation](#installation)
