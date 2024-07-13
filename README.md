@@ -55,7 +55,7 @@ CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ### Register a Patient
 `POST /api/v1/user/patient/register`
 Request body:
-`{
+{
   "firstName": "John",
   "lastName": "Doe",
   "email": "john@example.com",
@@ -65,7 +65,7 @@ Request body:
   "gender": "Male",
   "password": "password",
   "role": "Patient"
-}`
+}
 
 
 
