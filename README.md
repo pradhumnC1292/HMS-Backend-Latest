@@ -25,8 +25,8 @@ This is the backend service for the Hospital Management System, built with Node.
    npm install
 3. Set up environment variables. Create a .env file in the root directory and add the following variables:
 
-PORT: Port on which the server will run.
-FRONTEND_URL: URL of the frontend application.
+-PORT: Port on which the server will run.
+-FRONTEND_URL: URL of the frontend application.
 DASHBOARD_URL: URL of the dashboard application.
 MONGODB_URI: MongoDB connection string.
 JWT_SECRET_KEY: Secret key for JWT.
