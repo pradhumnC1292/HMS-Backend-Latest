@@ -188,24 +188,74 @@ GET /api/v1/message/getallmessages
 
 ## User Schema
 
-firstName: String (required)
-lastName: String (required)
-email: String (required, unique)
-phone: String (required)
-national_identity_card_number: String (required)
-dob: Date (required)
-gender: String (required, enum: ["Male", "Female"])
-password: String (required, select: false)
-role: String (required, enum: ["Patient", "Doctor", "Admin"])
-doctorDepartment: String (required if role is "Doctor")
-docAvatar: { public_id: String, url: String } (required if role is "Doctor")
+```json
+ {
+    "firstName": { "type": "String", "required": true },
+    "lastName": { "type": "String", "required": true },
+    "email": { "type": "String", "required": true, "unique": true },
+    "phone": { "type": "String", "required": true },
+    "national_identity_card_number": { "type": "String", "required": true },
+    "dob": { "type": "Date", "required": true },
+    "gender": { "type": "String", "required": true, "enum": ["Male", "Female"] },
+    "password": { "type": "String", "required": true, "select": false },
+    "role": { "type": "String", "required": true, "enum": ["Patient", "Doctor", "Admin"] },
+    "doctorDepartment": { "type": "String", "requiredIfRoleIsDoctor": true },
+    "docAvatar": {
+      "public_id": { "type": "String" },
+      "url": { "type": "String" },
+      "requiredIfRoleIsDoctor": true
+    }
+```
+## AppointmentSchema
+```json
+ {
+    "firstName": { "type": "String", "required": true },
+    "lastName": { "type": "String", "required": true },
+    "email": { "type": "String", "required": true },
+    "phone": { "type": "String", "required": true },
+    "national_identity_card_number": { "type": "String", "required": true },
+    "dob": { "type": "Date", "required": true },
+    "gender": { "type": "String", "required": true, "enum": ["Male", "Female"] },
+    "appointment_date": { "type": "String", "required": true },
+    "department": { "type": "String", "required": true },
+    "doctor": {
+      "firstName": { "type": "String", "required": true },
+      "lastName": { "type": "String", "required": true }
+    },
+    "hasVisited": { "type": "Boolean", "default": false },
+    "address": { "type": "String", "required": true },
+    "doctorId": { "type": "ObjectId", "required": true },
+    "patientId": { "type": "ObjectId", "required": true },
+    "status": { "type": "String", "enum": ["Pending", "Accepted", "Rejected"], "default": "Pending" }
+  },
+```
+## MessageSchema 
+```json
+{
+    "firstName": { "type": "String", "required": true },
+    "lastName": { "type": "String", "required": true },
+    "email": { "type": "String", "required": true },
+    "phone": { "type": "String", "required": true },
+    "message": { "type": "String", "required": true }
+  }
+```
+# Middleware
 
+## Authentication Middleware
+`isAdminAuthenticated`: Middleware to check if the admin is authenticated.
 
+`isPatientAuthenticated`: Middleware to check if the patient is authenticated.
 
+## Error Handling Middleware
+`errorMiddleware`: Middleware to handle errors and send appropriate responses.
 
+# Additional Features
+. JWT-based authentication for users.
 
+. Cloudinary integration for image uploads.
 
-
+. Separate roles for Patients, Doctors, and Admins.
+. Comprehensive error handling.
 
 
 
