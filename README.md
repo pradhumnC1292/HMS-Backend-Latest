@@ -187,7 +187,7 @@ GET /api/v1/message/getallmessages
 # Data Models
 
 ## User Schema
-`
+
 firstName: String (required)
 lastName: String (required)
 email: String (required, unique)
@@ -199,7 +199,7 @@ password: String (required, select: false)
 role: String (required, enum: ["Patient", "Doctor", "Admin"])
 doctorDepartment: String (required if role is "Doctor")
 docAvatar: { public_id: String, url: String } (required if role is "Doctor")
-`
+
 
 
 
