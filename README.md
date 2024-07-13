@@ -69,6 +69,142 @@ Request body:
   "password": "password",
   "role": "Patient"
 }
+```
+## Login 
+
+POST /api/v1/user/login
+
+```json
+{
+  "email": "john@example.com",
+  "password": "password",
+  "confirmPassword": "password",
+  "role": "Patient"
+}
+```
+
+## Register an Admin
+
+POST /api/v1/user/admin/register
+```json
+{
+  "firstName": "Admin",
+  "lastName": "User",
+  "email": "admin@example.com",
+  "phone": "1234567890",
+  "national_identity_card_number": "1234567890123",
+  "dob": "1980-01-01",
+  "gender": "Female",
+  "password": "adminpassword"
+}
+
+```
+
+## Register a Doctor
+
+POST /api/v1/user/doctor/register
+
+```json
+{
+  "firstName": "Doctor",
+  "lastName": "Strange",
+  "email": "doctor@example.com",
+  "phone": "1234567890",
+  "national_identity_card_number": "1234567890123",
+  "dob": "1975-01-01",
+  "gender": "Male",
+  "password": "doctorpassword",
+  "doctorDepartment": "Cardiology"
+}
+
+```
+## Get All Doctors
+
+GET /api/v1/user/doctors
+
+## Get User Details
+
+GET /api/v1/user/admin/me
+
+GET /api/v1/user/patient/me
+ 
+# Appointments
+
+## Make an Appointment
+
+POST /api/v1/appointment/post
+
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "phone": "1234567890",
+  "national_identity_card_number": "1234567890123",
+  "dob": "1990-01-01",
+  "gender": "Male",
+  "appointment_date": "2023-07-12",
+  "department": "Cardiology",
+  "doctor_firstName": "Doctor",
+  "doctor_lastName": "Strange",
+  "hasVisited": false,
+  "address": "123 Main St"
+}
+
+```
+## Get All Appointments
+
+GET /api/v1/appointment/getall
+
+## Update Appointment Status
+
+PUT /api/v1/appointment/update/:id
+
+## Delete Appointment
+
+DELETE /api/v1/appointment/delete/:id
+
+# Messages
+
+## Send a Message
+POST /api/v1/message/send
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "phone": "1234567890",
+  "message": "Hello, I need assistance."
+}
+
+```
+
+## Get All Messages
+
+GET /api/v1/message/getallmessages
+
+
+# Data Models
+
+## User Schema
+`
+firstName: String (required)
+lastName: String (required)
+email: String (required, unique)
+phone: String (required)
+national_identity_card_number: String (required)
+dob: Date (required)
+gender: String (required, enum: ["Male", "Female"])
+password: String (required, select: false)
+role: String (required, enum: ["Patient", "Doctor", "Admin"])
+doctorDepartment: String (required if role is "Doctor")
+docAvatar: { public_id: String, url: String } (required if role is "Doctor")
+`
+
+
+
+
+
 
 
 
