@@ -25,16 +25,17 @@ This is the backend service for the Hospital Management System, built with Node.
    npm install
 3. Set up environment variables. Create a .env file in the root directory and add the following variables:
 
--PORT: Port on which the server will run.
--FRONTEND_URL: URL of the frontend application.
-DASHBOARD_URL: URL of the dashboard application.
-MONGODB_URI: MongoDB connection string.
-JWT_SECRET_KEY: Secret key for JWT.
-JWT_EXPIRES: JWT expiration time.
-COOKIE_EXPIRES: Cookie expiration time in days.
-CLOUDINARY_CLOUD_NAME: Cloudinary cloud name for image uploads.
-CLOUDINARY_API_KEY: Cloudinary API key.
-CLOUDINARY_API_SECRET: Cloudinary API secret.
+PORT=5000
+FRONTEND_URL=http://localhost:3000
+DASHBOARD_URL=http://localhost:3001
+MONGODB_URI=mongodb://localhost:27017/employeeDB
+JWT_SECRET_KEY=your_jwt_secret_key
+JWT_EXPIRES=7d
+COOKIE_EXPIRES=7
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
 
 4. Start the Server
    npm start
