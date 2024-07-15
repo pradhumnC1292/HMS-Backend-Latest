@@ -48,7 +48,7 @@ FRONTEND_URL=http://localhost:3000
 
 DASHBOARD_URL=http://localhost:3001
 
-MONGODB_URI=mongodb://localhost:27017/employeeDB
+MONGODB_URI=mongodb://localhost:27017/YourDatabaseName
 
 JWT_SECRET_KEY=your_jwt_secret_key
 
